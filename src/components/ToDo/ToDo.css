@@ -1,0 +1,38 @@
+.todo__item {
+  width: 100%;
+  height: 62px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 16px;
+  padding: 24px;
+
+  background: #f4f5f4;
+  border-radius: 8px;
+}
+
+.todo__item-input {
+  width: 100%;
+  height: 46px;
+
+  margin-right: 16px;
+  padding-left: 16px;
+
+  background: #fff;
+  border: 1px solid #f4f5f4;
+
+  border-radius: 8px;
+}
+
+.todo__item-buttons {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+}
+
+.todo__item-btn {
+  cursor: pointer;
+}

@@ -1,0 +1,28 @@
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  color: #b4b4b4;
+}
+
+.footer__bottom-terms {
+  display: flex;
+
+  gap: 66px;
+}
+
+.footer__bottom-text {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+
+  color: #b4b4b4;
+}
+
+@media (max-width: 545px) {
+  .footer__bottom-terms {
+    margin-top: 16px;
+    gap: 24px;
+  }
+}

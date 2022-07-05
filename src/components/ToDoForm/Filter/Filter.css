@@ -1,0 +1,30 @@
+.tabs {
+  display: flex;
+  gap: 16px;
+}
+
+.tabs__item {
+  height: 46px;
+
+  padding: 16px 32px;
+
+  border: 1px solid #f4f5f4;
+  border-radius: 8px;
+  background-color: #fff;
+
+  cursor: pointer;
+}
+
+.tabs__item_active {
+  background-color: #f4f5fe;
+}
+
+@media (max-width: 560px) {
+  .tabs__item {
+    padding: 12px 20px;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+  }
+}

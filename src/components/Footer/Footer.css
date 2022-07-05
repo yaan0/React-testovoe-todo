@@ -1,0 +1,13 @@
+.footer {
+  width: 100%;
+  min-height: 185px;
+
+  margin: auto;
+  padding-bottom: 24px;
+
+  background-color: #0b0e27;
+}
+
+.footer__hr {
+  border-top: 1px solid #3f3f3f;
+}
