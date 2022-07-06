@@ -57,12 +57,14 @@
 /* (3 точки) Кнопка открытия todo__item-btn-mobail  */
 .todo__item-open-btns {
   height: 20px;
-  /* display: flex; */
+
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 
   display: none;
+
+  background: none;
 }
 
 .todo__item-open-btns span {
