@@ -41,24 +41,26 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <div className="container todo-wrapper">
-        <ToDoForm
-          addTask={addTask}
-          itemActive={itemActive}
-          setItemActive={setItemActive}
-        />
-        {todos
-          .filter((todo) => todo.filter === itemActive)
-          .map((todo) => {
-            return (
-              <ToDo
-                todo={todo}
-                key={todo.id}
-                editTask={editTask}
-                removeTask={removeTask}
-              />
-            );
-          })}
+      <div className="todo-block">
+        <div className="container">
+          <ToDoForm
+            addTask={addTask}
+            itemActive={itemActive}
+            setItemActive={setItemActive}
+          />
+          {todos
+            .filter((todo) => todo.filter === itemActive)
+            .map((todo) => {
+              return (
+                <ToDo
+                  todo={todo}
+                  key={todo.id}
+                  editTask={editTask}
+                  removeTask={removeTask}
+                />
+              );
+            })}
+        </div>
       </div>
       <Footer />
     </div>

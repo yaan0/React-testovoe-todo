@@ -20,7 +20,7 @@ body {
   padding: 0 20px;
 }
 
-.todo-wrapper {
+.todo-block {
   flex: 1 1 auto;
   width: 100%;
 }
