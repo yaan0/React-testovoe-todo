@@ -5,7 +5,7 @@ import Filter from "./Filter/Filter";
 
 import "./ToDoForm.css";
 
-const ToDoForm = ({ addTask }) => {
+const ToDoForm = ({ addTask, itemActive, setItemActive }) => {
   const [userInput, setUserInput] = useState("");
 
   const handleChange = (e) => {
@@ -25,7 +25,7 @@ const ToDoForm = ({ addTask }) => {
 
   return (
     <form className="todo" onSubmit={handleSubmit}>
-      <Filter />
+      <Filter itemActive={itemActive} setItemActive={setItemActive} />
       <div className="todo__inner">
         <input
           className="todo__input"
@@ -37,7 +37,7 @@ const ToDoForm = ({ addTask }) => {
         />
 
         <button className="todo__button">
-          <span className="todo__button-text">Добавить</span>{" "}
+          <span className="todo__button-text">Добавить</span>
           <img className="todo__button-img" src={add} alt="add" />
         </button>
       </div>

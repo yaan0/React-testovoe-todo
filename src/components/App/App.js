@@ -8,13 +8,14 @@ import "./App.css";
 
 function App() {
   const [todos, setTodos] = useState([]);
+  const [itemActive, setItemActive] = useState(1);
 
   const addTask = (userInput) => {
     if (userInput) {
       const newItem = {
         id: Math.random().toString(36).substring(2, 9),
         task: userInput,
-        filter: "",
+        filter: itemActive,
       };
       setTodos([...todos, newItem]);
     }
@@ -41,17 +42,23 @@ function App() {
     <div className="app">
       <Header />
       <div className="container todo-wrapper">
-        <ToDoForm addTask={addTask} />
-        {todos.map((todo) => {
-          return (
-            <ToDo
-              todo={todo}
-              key={todo.id}
-              editTask={editTask}
-              removeTask={removeTask}
-            />
-          );
-        })}
+        <ToDoForm
+          addTask={addTask}
+          itemActive={itemActive}
+          setItemActive={setItemActive}
+        />
+        {todos
+          .filter((todo) => todo.filter === itemActive)
+          .map((todo) => {
+            return (
+              <ToDo
+                todo={todo}
+                key={todo.id}
+                editTask={editTask}
+                removeTask={removeTask}
+              />
+            );
+          })}
       </div>
       <Footer />
     </div>

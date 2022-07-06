@@ -8,6 +8,11 @@ import "./ToDo.css";
 const ToDo = ({ todo, editTask, removeTask }) => {
   const [isEdit, setIsEdit] = useState(false);
   const [text, setText] = useState(todo.task);
+  const [isActive, setIsActive] = useState(false);
+
+  const btnsStyleBlock = isActive
+    ? "todo__item-buttons_block"
+    : "todo__item-buttons";
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
@@ -29,22 +34,29 @@ const ToDo = ({ todo, editTask, removeTask }) => {
         todo.task
       )}
 
-      <div className="todo__item-buttons">
-        <img
-          className="todo__item-btn"
-          onClick={() => removeTask(todo.id)}
-          src={Delete}
-          alt="delete"
-        />
+      <button
+        className="todo__item-open-btns"
+        onClick={() => setIsActive(!isActive)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-        <img
-          className="todo__item-btn"
+      <div className={btnsStyleBlock}>
+        <div onClick={() => removeTask(todo.id)}>
+          <img className="todo__item-btn" src={Delete} alt="delete" />
+          <span className="todo__item-btn-mobail-text">Удалить</span>
+        </div>
+
+        <div
           onClick={() => {
             setIsEdit(!isEdit);
           }}
-          src={Pencil}
-          alt="pencil"
-        />
+        >
+          <img className="todo__item-btn" src={Pencil} alt="pencil" />
+          <span className="todo__item-btn-mobail-text">Редактировать</span>
+        </div>
       </div>
     </div>
   );

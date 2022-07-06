@@ -15,7 +15,11 @@
   cursor: pointer;
 }
 
-.tabs__item_active {
+.tabs__item-active {
+  background-color: #f4f5fe;
+}
+
+.tabs__item:hover {
   background-color: #f4f5fe;
 }
 

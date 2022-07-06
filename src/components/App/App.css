@@ -1,12 +1,12 @@
 html,
 body {
   height: 100%;
+  min-width: 375px;
 }
 
 .app {
+  height: 100vh;
   min-height: 100%;
-
-  position: relative;
 
   display: flex;
   flex-direction: column;
